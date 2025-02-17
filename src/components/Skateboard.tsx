@@ -33,7 +33,7 @@ type GLTFResult = GLTF & {
         Truck1: THREE.Mesh
         Truck2: THREE.Mesh
     }
-    materials: {}
+    materials: object
 }
 
 //the nodes comes primarilly from the bin file, - the gltf file points to the bin file.
@@ -53,7 +53,7 @@ export function Skateboard({
 }: SkateboardProps) {
     const wheelRefs = useRef<THREE.Object3D[]>([])
 
-    const { nodes, materials } = useGLTF('/skateboard.gltf') as GLTFResult
+    const { nodes } = useGLTF('/skateboard.gltf') as GLTFResult
 
     
     // Wheel Textures
@@ -144,7 +144,7 @@ export function Skateboard({
             metalness: 0.8,
             roughness: 0.25
 
-        }), [truckColor]
+        }), [truckColor, metalNormal]
     )
 
     // const deckTexture = useTexture('/skateboard/Deck.webp')

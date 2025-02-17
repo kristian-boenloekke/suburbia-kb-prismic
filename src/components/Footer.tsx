@@ -5,9 +5,7 @@ import { Bounded } from "./Bounded"
 import { asImageSrc } from "@prismicio/client"
 import { FooterPhysics } from "./FooterPhysics"
 
-type Props = {}
-
-export async function Footer({ }: Props) {
+export async function Footer() {
   const client = createClient()
   const settings = await client.getSingle('settings')
   const boardTextureURLs = settings.data.footer_skateboards.map((item) => asImageSrc(item.skateboard, {h: 600}))
