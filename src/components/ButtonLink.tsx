@@ -51,7 +51,7 @@ export function ButtonLink({
       ) : null}
       {children}
     </PrismicNextLink>
-  );
+  )
 }
 
 function SkateboardIcon() {
